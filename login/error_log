@@ -1,0 +1,3 @@
+[11-Apr-2024 13:14:45 UTC] PHP Notice:  Undefined index: accion in /home/c0nuj3sgg9m5/public_html/login/login_process.php on line 5
+[11-Apr-2024 13:14:45 UTC] PHP Notice:  Undefined index: txtNombreUsuario in /home/c0nuj3sgg9m5/public_html/login/login_process.php on line 6
+[11-Apr-2024 13:14:45 UTC] PHP Notice:  Undefined index: txtContrasena in /home/c0nuj3sgg9m5/public_html/login/login_process.php on line 7
