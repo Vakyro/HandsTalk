@@ -154,7 +154,7 @@ export function VideoRecorder({ onRecordingComplete, maxDuration = 30 }: VideoRe
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-white" />
               </span>
-              <span className="text-sm font-medium text-accent-foreground">Recording</span>
+              <span className="text-sm font-medium text-accent-foreground">Grabando</span>
             </motion.div>
           )}
         </AnimatePresence>
@@ -171,7 +171,7 @@ export function VideoRecorder({ onRecordingComplete, maxDuration = 30 }: VideoRe
           <div className="absolute inset-0 flex items-center justify-center bg-muted">
             <div className="text-center">
               <Camera className="mx-auto h-12 w-12 text-muted-foreground" />
-              <p className="mt-2 text-sm text-muted-foreground">Starting camera...</p>
+              <p className="mt-2 text-sm text-muted-foreground">Iniciando cámara...</p>
             </div>
           </div>
         )}
@@ -187,14 +187,14 @@ export function VideoRecorder({ onRecordingComplete, maxDuration = 30 }: VideoRe
               className="gap-2"
             >
               <RotateCcw className="h-4 w-4" />
-              Record Again
+              Grabar de Nuevo
             </Button>
             <Button
               onClick={confirmRecording}
               className="gap-2 bg-primary hover:bg-primary/90"
             >
               <Check className="h-4 w-4" />
-              Use This Video
+              Usar Este Video
             </Button>
           </>
         ) : (
@@ -207,12 +207,12 @@ export function VideoRecorder({ onRecordingComplete, maxDuration = 30 }: VideoRe
             {isRecording ? (
               <>
                 <Square className="h-4 w-4" />
-                Stop Recording
+                Detener Grabación
               </>
             ) : (
               <>
                 <Camera className="h-4 w-4" />
-                Start Recording
+                Iniciar Grabación
               </>
             )}
           </Button>

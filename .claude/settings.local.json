@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo:*)",
+      "Bash(grep -E \"\\\\.\\(tsx|css\\)$\")",
+      "Bash(npm run *)",
+      "Bash(dir docs *)",
+      "Bash(npx next *)",
+      "Bash(grep -rn \"#[0-9A-Fa-f]\\\\{3,6\\\\}\" /c/Users/\"Latitude 7390\"/desktop/handstalk --include=\"*.tsx\" --include=\"*.ts\" --include=\"*.css\")"
+    ]
+  }
+}

@@ -38,11 +38,11 @@ import { saveTextToSignResult } from '@/lib/services/saved'
 import { toast } from 'sonner'
 
 const generationStages = [
-  'Analyzing text structure...',
-  'Mapping to sign vocabulary...',
-  'Generating motion sequences...',
-  'Rendering sign performance...',
-  'Finalizing video...',
+  'Analizando estructura del texto...',
+  'Mapeando al vocabulario de señas...',
+  'Generando secuencias de movimiento...',
+  'Renderizando interpretación de señas...',
+  'Finalizando video...',
 ]
 
 export default function TextToSignPage() {
@@ -54,7 +54,7 @@ export default function TextToSignPage() {
   const [isSaved, setIsSaved] = useState(false)
   
   // Options state
-  const [language, setLanguage] = useState('ASL')
+  const [language, setLanguage] = useState('LSM')
   const [variation, setVariation] = useState('standard')
   const [avatarStyle, setAvatarStyle] = useState('realistic')
   const [playbackSpeed, setPlaybackSpeed] = useState(1)
@@ -63,7 +63,7 @@ export default function TextToSignPage() {
 
   const handleGenerate = useCallback(async () => {
     if (!inputText.trim()) {
-      toast.error('Please enter some text to translate')
+      toast.error('Por favor ingresa texto para traducir')
       return
     }
 
@@ -85,7 +85,7 @@ export default function TextToSignPage() {
       setResult(videoResult)
     } catch (error) {
       console.error('Generation error:', error)
-      toast.error('Failed to generate video. Please try again.')
+      toast.error('Error al generar el video. Por favor intenta de nuevo.')
     } finally {
       setIsGenerating(false)
     }
@@ -95,15 +95,15 @@ export default function TextToSignPage() {
     if (result && isAuthenticated) {
       saveTextToSignResult(result)
       setIsSaved(true)
-      toast.success('Video saved!')
+      toast.success('¡Video guardado!')
     } else if (!isAuthenticated) {
-      toast.error('Please log in to save translations')
+      toast.error('Por favor inicia sesión para guardar traducciones')
     }
   }, [result, isAuthenticated])
 
   const handleCopyText = useCallback(() => {
     navigator.clipboard.writeText(inputText)
-    toast.success('Text copied to clipboard')
+    toast.success('Texto copiado al portapapeles')
   }, [inputText])
 
   const handleReset = useCallback(() => {
@@ -118,9 +118,9 @@ export default function TextToSignPage() {
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">Text to Sign</h1>
+          <h1 className="text-3xl font-bold text-foreground">Texto a Seña</h1>
           <p className="mt-2 text-muted-foreground">
-            Transform written text into natural sign language video performances
+            Transforma texto escrito en videos de interpretación natural de lengua de señas
           </p>
         </div>
 
@@ -132,7 +132,7 @@ export default function TextToSignPage() {
               <div className="flex items-center justify-between mb-4">
                 <h2 className="font-semibold text-foreground flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-primary" />
-                  Enter Your Text
+                  Ingresa Tu Texto
                 </h2>
                 <Button
                   variant="ghost"
@@ -141,20 +141,20 @@ export default function TextToSignPage() {
                   className="gap-1"
                 >
                   <Settings2 className="h-4 w-4" />
-                  Options
+                  Opciones
                 </Button>
               </div>
 
               <Textarea
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
-                placeholder="Type a word, phrase, or sentence to translate into sign language..."
+                placeholder="Escribe una palabra, frase u oración para traducir a lengua de señas..."
                 className="min-h-[150px] resize-none border-border/50 bg-muted/30 focus:border-primary"
               />
 
               <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-                <span>{inputText.length} characters</span>
-                <span>{inputText.split(/\s+/).filter(Boolean).length} words</span>
+                <span>{inputText.length} caracteres</span>
+                <span>{inputText.split(/\s+/).filter(Boolean).length} palabras</span>
               </div>
 
               {/* Options panel */}
@@ -167,13 +167,13 @@ export default function TextToSignPage() {
                     className="mt-6 overflow-hidden"
                   >
                     <div className="border-t border-border/50 pt-6">
-                      <h3 className="text-sm font-medium text-foreground mb-4">Generation Options</h3>
+                      <h3 className="text-sm font-medium text-foreground mb-4">Opciones de Generación</h3>
                       <div className="grid gap-4 sm:grid-cols-3">
                         {/* Language */}
                         <div>
                           <label className="text-xs text-muted-foreground mb-1.5 flex items-center gap-1">
                             <Globe className="h-3 w-3" />
-                            Sign Language
+                            Lengua de Señas
                           </label>
                           <Select value={language} onValueChange={setLanguage}>
                             <SelectTrigger className="border-border/50">
@@ -192,7 +192,7 @@ export default function TextToSignPage() {
                         {/* Variation */}
                         <div>
                           <label className="text-xs text-muted-foreground mb-1.5 block">
-                            Style Variation
+                            Variación de Estilo
                           </label>
                           <Select value={variation} onValueChange={setVariation}>
                             <SelectTrigger className="border-border/50">
@@ -212,7 +212,7 @@ export default function TextToSignPage() {
                         <div>
                           <label className="text-xs text-muted-foreground mb-1.5 flex items-center gap-1">
                             <User className="h-3 w-3" />
-                            Avatar Style
+                            Estilo de Avatar
                           </label>
                           <Select value={avatarStyle} onValueChange={setAvatarStyle}>
                             <SelectTrigger className="border-border/50">
@@ -241,18 +241,18 @@ export default function TextToSignPage() {
                 size="lg"
               >
                 <Video className="h-5 w-5" />
-                Generate Sign Language Video
+                Generar Video de Lengua de Señas
               </Button>
             </div>
 
             {/* Quick tips */}
             <div className="rounded-xl border border-border/50 bg-muted/30 p-4">
-              <h3 className="text-sm font-medium text-foreground mb-2">Tips for best results</h3>
+              <h3 className="text-sm font-medium text-foreground mb-2">Consejos para mejores resultados</h3>
               <ul className="space-y-1.5 text-xs text-muted-foreground">
-                <li>• Use simple, clear sentences for more accurate translation</li>
-                <li>• Short phrases work better than long paragraphs</li>
-                <li>• Avoid slang or idioms that may not have direct sign equivalents</li>
-                <li>• Try different variations for different contexts</li>
+                <li>• Usa oraciones simples y claras para una traducción más precisa</li>
+                <li>• Las frases cortas funcionan mejor que los párrafos largos</li>
+                <li>• Evita jerga o modismos que pueden no tener equivalentes directos en señas</li>
+                <li>• Prueba diferentes variaciones para distintos contextos</li>
               </ul>
             </div>
           </div>
@@ -266,11 +266,11 @@ export default function TextToSignPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="rounded-2xl border border-border/50 bg-card p-8"
+                  className="rounded-2xl border border-border/50 bg-card p-6"
                 >
                   <ProcessingState
                     progress={progress}
-                    message="Generating your sign language video..."
+                    message="Generando tu video de lengua de señas..."
                     stages={generationStages}
                   />
                 </motion.div>
@@ -299,7 +299,7 @@ export default function TextToSignPage() {
                   <div className="rounded-xl border border-border/50 bg-card p-4">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-xs text-muted-foreground mb-1">Original Text</p>
+                        <p className="text-xs text-muted-foreground mb-1">Texto Original</p>
                         <p className="text-foreground font-medium">{result.originalText}</p>
                         <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
                           <span className="rounded bg-muted px-2 py-0.5">{result.language}</span>
@@ -337,14 +337,14 @@ export default function TextToSignPage() {
                       className="flex-1 gap-2"
                     >
                       <RotateCcw className="h-4 w-4" />
-                      Translate Another
+                      Traducir Otro
                     </Button>
                     <Button
                       onClick={handleGenerate}
                       className="flex-1 gap-2 bg-primary hover:bg-primary/90"
                     >
                       <Sparkles className="h-4 w-4" />
-                      Regenerate
+                      Regenerar
                     </Button>
                   </div>
                 </motion.div>
@@ -354,16 +354,16 @@ export default function TextToSignPage() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border/50 bg-muted/30 p-12 text-center"
+                  className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border/50 bg-muted/30 p-8 text-center"
                 >
                   <div className="rounded-full bg-primary/10 p-4 mb-4">
                     <Video className="h-10 w-10 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground">
-                    Your video will appear here
+                    Tu video aparecerá aquí
                   </h3>
                   <p className="mt-2 max-w-sm text-sm text-muted-foreground">
-                    Enter text on the left and click Generate to create a sign language video performance
+                    Ingresa texto a la izquierda y haz clic en Generar para crear una interpretación de lengua de señas
                   </p>
                 </motion.div>
               )}

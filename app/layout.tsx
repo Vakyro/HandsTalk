@@ -16,13 +16,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: 'HandsTalk - Sign Language Translation & Learning Platform',
-  description: 'Break communication barriers with AI-powered sign language translation and interactive learning. Translate sign to text, generate sign language videos, and learn at your own pace.',
-  keywords: ['sign language', 'ASL', 'translation', 'learning', 'accessibility', 'deaf', 'hard of hearing'],
+  title: 'HandsTalk - Plataforma de Traducción y Aprendizaje de Lengua de Señas',
+  description: 'Rompe las barreras de comunicación con traducción de lengua de señas impulsada por IA y aprendizaje interactivo. Traduce señas a texto, genera videos en lengua de señas y aprende a tu propio ritmo.',
+  keywords: ['lengua de señas', 'LSM', 'traducción', 'aprendizaje', 'accesibilidad', 'sordo', 'hipoacúsico'],
   authors: [{ name: 'HandsTalk Team' }],
   openGraph: {
-    title: 'HandsTalk - Sign Language Translation & Learning',
-    description: 'AI-powered sign language platform for translation and learning',
+    title: 'HandsTalk - Traducción y Aprendizaje de Lengua de Señas',
+    description: 'Plataforma de lengua de señas impulsada por IA para traducción y aprendizaje',
     type: 'website',
   },
 }
@@ -39,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`${inter.variable} ${nunito.variable} font-sans antialiased`}>
         <AuthProvider>
           {children}

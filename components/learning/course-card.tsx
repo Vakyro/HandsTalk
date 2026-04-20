@@ -17,9 +17,15 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
   const isCompleted = progress === 100
 
   const levelColors = {
-    beginner: 'bg-green-100 text-green-700 border-green-200',
+    beginner: 'bg-secondary/50 text-secondary-foreground border-secondary/50',
     intermediate: 'bg-primary/10 text-primary border-primary/20',
     advanced: 'bg-accent/10 text-accent border-accent/20',
+  }
+
+  const levelLabels: Record<string, string> = {
+    beginner: 'Principiante',
+    intermediate: 'Intermedio',
+    advanced: 'Avanzado',
   }
 
   return (
@@ -41,14 +47,14 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
           "absolute top-3 left-3 rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize",
           levelColors[course.level]
         )}>
-          {course.level}
+          {levelLabels[course.level] || course.level}
         </span>
 
         {/* Completed badge */}
         {isCompleted && (
-          <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-green-500 px-2.5 py-0.5 text-xs font-medium text-white">
+          <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full bg-primary px-2.5 py-0.5 text-xs font-medium text-primary-foreground">
             <CheckCircle className="h-3 w-3" />
-            Completed
+            Completado
           </div>
         )}
       </div>
@@ -65,7 +71,7 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
         <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
           <span className="flex items-center gap-1">
             <BookOpen className="h-3.5 w-3.5" />
-            {course.lessonCount} lessons
+            {course.lessonCount} lecciones
           </span>
           <span className="flex items-center gap-1">
             <Clock className="h-3.5 w-3.5" />
@@ -77,7 +83,7 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
         {course.enrolled && (
           <div className="mt-4">
             <div className="flex justify-between text-xs mb-1">
-              <span className="text-muted-foreground">Progress</span>
+              <span className="text-muted-foreground">Progreso</span>
               <span className="font-medium text-foreground">{Math.round(progress)}%</span>
             </div>
             <div className="h-2 rounded-full bg-muted overflow-hidden">
@@ -87,7 +93,7 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={cn(
                   "h-full rounded-full",
-                  isCompleted ? "bg-green-500" : "bg-primary"
+                  "bg-primary"
                 )}
               />
             </div>
@@ -105,9 +111,9 @@ export function CourseCard({ course, index = 0 }: CourseCardProps) {
               )}
             >
               {course.enrolled ? (
-                isCompleted ? 'Review Course' : 'Continue Learning'
+                isCompleted ? 'Revisar Curso' : 'Continuar Aprendiendo'
               ) : (
-                'Start Course'
+                'Comenzar Curso'
               )}
               <ArrowRight className="h-4 w-4" />
             </Button>

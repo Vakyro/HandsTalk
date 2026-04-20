@@ -78,8 +78,8 @@ export function LiveCameraPanel({
         ) : (
           <div className="flex h-full flex-col items-center justify-center">
             <Camera className="h-16 w-16 text-muted-foreground/50" />
-            <p className="mt-4 text-muted-foreground">Camera is off</p>
-            <p className="mt-1 text-sm text-muted-foreground/70">Click Start to begin live translation</p>
+            <p className="mt-4 text-muted-foreground">Cámara apagada</p>
+            <p className="mt-1 text-sm text-muted-foreground/70">Haz clic en Iniciar para comenzar la traducción en vivo</p>
           </div>
         )}
 
@@ -92,7 +92,7 @@ export function LiveCameraPanel({
               exit={{ opacity: 0 }}
               className="absolute left-4 top-4 flex items-center gap-2"
             >
-              <div className={`flex items-center gap-2 rounded-full px-3 py-1.5 ${isPaused ? 'bg-secondary' : 'bg-green-500'}`}>
+              <div className={`flex items-center gap-2 rounded-full px-3 py-1.5 ${isPaused ? 'bg-secondary' : 'bg-primary'}`}>
                 <span className="relative flex h-2 w-2">
                   {!isPaused && (
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" />
@@ -100,7 +100,7 @@ export function LiveCameraPanel({
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
                 </span>
                 <span className={`text-xs font-medium ${isPaused ? 'text-secondary-foreground' : 'text-white'}`}>
-                  {isPaused ? 'Paused' : 'Live'}
+                  {isPaused ? 'Pausado' : 'En Vivo'}
                 </span>
               </div>
             </motion.div>
@@ -112,7 +112,7 @@ export function LiveCameraPanel({
           <div className="absolute inset-0 flex items-center justify-center bg-muted/80">
             <div className="text-center">
               <Camera className="mx-auto h-12 w-12 animate-pulse text-muted-foreground" />
-              <p className="mt-2 text-sm text-muted-foreground">Starting camera...</p>
+              <p className="mt-2 text-sm text-muted-foreground">Iniciando cámara...</p>
             </div>
           </div>
         )}
@@ -127,7 +127,7 @@ export function LiveCameraPanel({
             className="gap-2 bg-primary hover:bg-primary/90"
           >
             <Camera className="h-5 w-5" />
-            Start Live Translation
+            Iniciar Traducción en Vivo
           </Button>
         ) : (
           <>
@@ -147,7 +147,7 @@ export function LiveCameraPanel({
               className="gap-2"
             >
               <CameraOff className="h-5 w-5" />
-              Stop
+              Detener
             </Button>
 
             <Button

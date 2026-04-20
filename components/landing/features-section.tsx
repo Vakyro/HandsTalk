@@ -17,56 +17,56 @@ import { SectionHeader } from '@/components/ui/section-header'
 const features = [
   {
     icon: MessageSquareText,
-    title: 'Sign to Text Translation',
-    description: 'Convert sign language videos to text with our advanced AI. Supports both uploaded videos and real-time camera input.',
+    title: 'Traducción Seña a Texto',
+    description: 'Convierte videos de lengua de señas a texto con nuestra IA avanzada. Compatible con videos subidos y cámara en tiempo real.',
     color: 'primary',
   },
   {
     icon: Video,
-    title: 'Text to Sign Videos',
-    description: 'Transform written text into natural sign language video performances. Choose from multiple styles and speeds.',
+    title: 'Videos Texto a Seña',
+    description: 'Transforma texto escrito en interpretaciones naturales de lengua de señas en video. Elige entre múltiples estilos y velocidades.',
     color: 'secondary',
   },
   {
     icon: Camera,
-    title: 'Live Translation Mode',
-    description: 'Real-time interpretation as you sign. Perfect for instant communication and practice sessions.',
+    title: 'Modo de Traducción en Vivo',
+    description: 'Interpretación en tiempo real mientras señas. Perfecto para comunicación instantánea y sesiones de práctica.',
     color: 'accent',
   },
   {
     icon: Upload,
-    title: 'Video Upload & Process',
-    description: 'Upload pre-recorded videos for detailed phrase-level translation with confidence scoring and metadata.',
+    title: 'Subida y Procesamiento de Video',
+    description: 'Sube videos pregrabados para traducción detallada a nivel de frase con puntuación de confianza y metadatos.',
     color: 'primary',
   },
   {
     icon: BookOpen,
-    title: 'Structured Learning',
-    description: 'Progress through courses from basics to advanced. Track your journey with XP, streaks, and achievements.',
+    title: 'Aprendizaje Estructurado',
+    description: 'Avanza por cursos desde lo básico hasta lo avanzado. Sigue tu progreso con XP, rachas y logros.',
     color: 'secondary',
   },
   {
     icon: Zap,
-    title: 'Interactive Practice',
-    description: 'Multiple choice, typing exercises, video interpretation, and record-yourself challenges.',
+    title: 'Práctica Interactiva',
+    description: 'Opción múltiple, ejercicios de escritura, interpretación de video y desafíos de grabación propia.',
     color: 'accent',
   },
   {
     icon: Trophy,
-    title: 'Achievements & Progress',
-    description: 'Earn badges, maintain streaks, and track your growth. Gamified learning keeps you motivated.',
+    title: 'Logros y Progreso',
+    description: 'Gana insignias, mantén rachas y sigue tu crecimiento. El aprendizaje gamificado te mantiene motivado.',
     color: 'primary',
   },
   {
     icon: Users,
-    title: 'Accessibility First',
-    description: 'Designed for deaf, hard-of-hearing, and hearing users alike. Breaking barriers for everyone.',
+    title: 'Accesibilidad Primero',
+    description: 'Diseñado para usuarios sordos, hipoacúsicos y oyentes por igual. Rompiendo barreras para todos.',
     color: 'secondary',
   },
   {
     icon: Globe,
-    title: 'Multiple Sign Languages',
-    description: 'Support for ASL, BSL, and more regional variations. Learn the language relevant to you.',
+    title: 'Múltiples Lenguas de Señas',
+    description: 'Soporte para LSM, ASL, BSL y más variantes regionales. Aprende la lengua más relevante para ti.',
     color: 'accent',
   },
 ]
@@ -92,12 +92,12 @@ const itemVariants = {
 
 export function FeaturesSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Features"
-          title="Everything You Need to Connect"
-          description="A complete platform for sign language translation and learning, powered by modern AI and designed for everyone."
+          badge="Funcionalidades"
+          title="Todo lo que Necesitas para Conectar"
+          description="Una plataforma completa para traducción y aprendizaje de lengua de señas, impulsada por IA moderna y diseñada para todos."
         />
 
         <motion.div
@@ -105,7 +105,7 @@ export function FeaturesSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {features.map((feature) => (
             <FeatureCard key={feature.title} {...feature} />

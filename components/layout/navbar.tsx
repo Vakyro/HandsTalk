@@ -21,11 +21,11 @@ import { AuthDialog } from '@/components/auth/auth-dialog'
 import { cn } from '@/lib/utils'
 
 const navLinks = [
-  { href: '/', label: 'Home', icon: null },
-  { href: '/sign-to-text', label: 'Sign to Text', icon: MessageSquareText },
-  { href: '/text-to-sign', label: 'Text to Sign', icon: Video },
-  { href: '/learn', label: 'Learn', icon: GraduationCap, requiresAuth: true },
-  { href: '/saved', label: 'Saved', icon: Bookmark, requiresAuth: true },
+  { href: '/', label: 'Inicio', icon: null },
+  { href: '/sign-to-text', label: 'Seña a Texto', icon: MessageSquareText },
+  { href: '/text-to-sign', label: 'Texto a Seña', icon: Video },
+  { href: '/learn', label: 'Aprender', icon: GraduationCap, requiresAuth: true },
+  { href: '/saved', label: 'Guardados', icon: Bookmark, requiresAuth: true },
 ]
 
 export function Navbar() {
@@ -59,10 +59,10 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "relative px-4 py-2 text-sm font-medium transition-colors rounded-lg",
+                    "relative px-4 py-2 text-sm font-medium rounded-lg transition-colors",
                     isActive 
-                      ? "text-primary" 
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                      ? "text-primary"
+                      : "text-muted-foreground hover:bg-muted/50 cursor-pointer hover:text-foreground transition-colors duration-300"
                   )}
                 >
                   {link.label}
@@ -90,22 +90,22 @@ export function Navbar() {
                   variant="ghost"
                   size="sm"
                   onClick={logout}
-                  className="text-muted-foreground hover:text-foreground"
+                  className="text-muted-foreground hover:text-foreground cursor-pointer transition-colors duration-500"
                 >
                   <LogOut className="mr-2 h-4 w-4" />
-                  Logout
+                  Cerrar sesión
                 </Button>
               </div>
             ) : (
-              <Button onClick={() => setAuthDialogOpen(true)} className="bg-primary hover:bg-primary/90">
-                Get Started
+              <Button onClick={() => setAuthDialogOpen(true)} className="bg-primary hover:bg-primary/90 cursor-pointer transition-colors duration-500">
+                Comenzar
               </Button>
             )}
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="rounded-lg p-2 text-foreground hover:bg-muted md:hidden"
+            className="cursor-pointer rounded-lg p-2 text-foreground hover:bg-muted md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -158,10 +158,10 @@ export function Navbar() {
                           logout()
                           setMobileMenuOpen(false)
                         }}
-                        className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                        className="flex w-full cursor-pointer items-center gap-3 rounded-lg px-4 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
                       >
                         <LogOut className="h-5 w-5" />
-                        Logout
+                        Cerrar sesión
                       </button>
                     </div>
                   ) : (
@@ -172,7 +172,7 @@ export function Navbar() {
                       }} 
                       className="w-full bg-primary hover:bg-primary/90"
                     >
-                      Get Started
+                      Comenzar
                     </Button>
                   )}
                 </div>

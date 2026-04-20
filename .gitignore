@@ -15,3 +15,5 @@ next.user-config.*
 node_modules/
 .next/
 .DS_Store
+.vercel
+.env*.local

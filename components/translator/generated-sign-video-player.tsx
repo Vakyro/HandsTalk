@@ -143,7 +143,7 @@ export function GeneratedSignVideoPlayer({
         {!isPlaying && (
           <button
             onClick={togglePlay}
-            className="absolute inset-0 flex items-center justify-center bg-black/20 transition-colors hover:bg-black/30"
+            className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 transition-colors hover:bg-black/30"
           >
             <div className="rounded-full bg-primary p-4 shadow-lg">
               <Play className="h-8 w-8 text-primary-foreground" fill="currentColor" />
@@ -218,7 +218,7 @@ export function GeneratedSignVideoPlayer({
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
-                <DropdownMenuLabel>Playback Speed</DropdownMenuLabel>
+                <DropdownMenuLabel>Velocidad de Reproducción</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 {playbackSpeeds.map((speed) => (
                   <DropdownMenuItem

@@ -14,7 +14,7 @@ export function HeroSection() {
         <div className="absolute top-40 -left-40 h-80 w-80 rounded-full bg-secondary/20 blur-3xl" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
+      <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export function HeroSection() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
               </span>
-              AI-Powered Sign Language Platform
+              Plataforma de Lengua de Señas con IA
             </span>
           </motion.div>
 
@@ -34,39 +34,39 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance"
+            className="mt-5 text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance"
           >
-            Breaking Communication{' '}
-            <span className="text-primary">Barriers</span>
+            Rompiendo Barreras de{' '}
+            <span className="text-primary">Comunicación</span>
             <br />
-            One Sign at a Time
+            Una Seña a la Vez
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground text-pretty"
+            className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground text-pretty"
           >
-            Translate sign language to text, generate signed videos from text, 
-            and learn at your own pace. Making communication accessible for everyone.
+            Traduce lengua de señas a texto, genera videos en señas desde texto
+            y aprende a tu propio ritmo. Haciendo la comunicación accesible para todos.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link href="/sign-to-text">
-              <Button size="lg" className="h-12 px-8 bg-primary hover:bg-primary/90 text-base">
-                Start Translating
+              <Button size="lg" className="h-12 px-8 bg-primary text-base cursor-pointer hover:bg-secondary hover:text-secondary-foreground transition-colors duration-300">
+                Comenzar a Traducir
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
             <Link href="/learn">
-              <Button size="lg" variant="outline" className="h-12 px-8 text-base border-border/50 hover:bg-muted">
-                Start Learning
+              <Button size="lg" variant="outline" className="h-12 px-8 text-base border-border/50 hover:bg-muted hover:text-foreground transition-colors duration-300 cursor-pointer">
+                Comenzar a Aprender
               </Button>
             </Link>
           </motion.div>
@@ -77,26 +77,26 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 grid gap-4 sm:grid-cols-3 lg:mt-20"
+          className="mt-10 grid gap-4 sm:grid-cols-3 lg:mt-14"
         >
           <PreviewCard
             icon={MessageSquareText}
-            title="Sign to Text"
-            description="Upload videos or use live camera for instant translation"
+            title="Seña a Texto"
+            description="Sube videos o usa la cámara en vivo para traducción instantánea"
             href="/sign-to-text"
             color="primary"
           />
           <PreviewCard
             icon={Video}
-            title="Text to Sign"
-            description="Generate sign language videos from any text"
+            title="Texto a Seña"
+            description="Genera videos de lengua de señas desde cualquier texto"
             href="/text-to-sign"
             color="secondary"
           />
           <PreviewCard
             icon={GraduationCap}
-            title="Learn & Practice"
-            description="Interactive lessons and games to master sign language"
+            title="Aprende y Practica"
+            description="Lecciones interactivas y juegos para dominar la lengua de señas"
             href="/learn"
             color="accent"
           />

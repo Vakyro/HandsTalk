@@ -34,7 +34,7 @@ export async function generateSignVideo(
   onProgress?: (progress: number) => void
 ): Promise<SignVideoResult> {
   const {
-    language = 'ASL',
+    language = 'LSM',
     variation = 'standard',
     avatarStyle = 'realistic',
   } = options
@@ -65,21 +65,21 @@ export async function generateSignVideo(
 }
 
 export const availableLanguages = [
-  { code: 'ASL', name: 'American Sign Language' },
-  { code: 'BSL', name: 'British Sign Language' },
-  { code: 'LSF', name: 'French Sign Language' },
-  { code: 'DGS', name: 'German Sign Language' },
-  { code: 'JSL', name: 'Japanese Sign Language' },
+  { code: 'LSM', name: 'Lengua de Señas Mexicana' },
+  { code: 'ASL', name: 'Lengua de Señas Americana' },
+  { code: 'BSL', name: 'Lengua de Señas Británica' },
+  { code: 'LSF', name: 'Lengua de Señas Francesa' },
+  { code: 'DGS', name: 'Lengua de Señas Alemana' },
 ]
 
 export const availableVariations = [
-  { code: 'standard', name: 'Standard' },
+  { code: 'standard', name: 'Estándar' },
   { code: 'formal', name: 'Formal' },
   { code: 'casual', name: 'Casual' },
 ]
 
 export const avatarStyles = [
-  { code: 'realistic', name: 'Realistic' },
-  { code: 'animated', name: 'Animated' },
-  { code: 'minimal', name: 'Minimal' },
+  { code: 'realistic', name: 'Realista' },
+  { code: 'animated', name: 'Animado' },
+  { code: 'minimal', name: 'Minimalista' },
 ]

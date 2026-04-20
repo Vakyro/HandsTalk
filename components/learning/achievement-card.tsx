@@ -39,7 +39,7 @@ export function AchievementCard({ achievement, index = 0 }: AchievementCardProps
     streak: 'from-accent/20 to-accent/5 border-accent/30',
     learning: 'from-primary/20 to-primary/5 border-primary/30',
     practice: 'from-secondary to-secondary/30 border-secondary',
-    social: 'from-green-100 to-green-50 border-green-200',
+    social: 'from-primary/20 to-primary/5 border-primary/30',
   }
 
   return (
@@ -102,7 +102,7 @@ export function AchievementCard({ achievement, index = 0 }: AchievementCardProps
         {/* Unlocked date */}
         {achievement.unlocked && achievement.unlockedAt && (
           <p className="mt-3 text-xs text-muted-foreground">
-            Unlocked {new Date(achievement.unlockedAt).toLocaleDateString()}
+            Desbloqueado el {new Date(achievement.unlockedAt).toLocaleDateString('es-MX')}
           </p>
         )}
       </div>

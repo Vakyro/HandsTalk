@@ -49,16 +49,16 @@ export default function LearnPage() {
         {/* Header */}
         <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-foreground">Learn</h1>
+            <h1 className="text-3xl font-bold text-foreground">Aprender</h1>
             <p className="mt-1 text-muted-foreground">
-              Your personalized sign language learning journey
+              Tu viaje personalizado de aprendizaje de lengua de señas
             </p>
           </div>
           <div className="flex items-center gap-3 rounded-xl bg-accent/10 px-4 py-2">
             <Flame className="h-6 w-6 text-accent" />
             <div>
               <p className="text-2xl font-bold text-accent">{progress.streak}</p>
-              <p className="text-xs text-muted-foreground">Day Streak</p>
+              <p className="text-xs text-muted-foreground">Días Consecutivos</p>
             </div>
           </div>
         </div>
@@ -71,34 +71,34 @@ export default function LearnPage() {
           <QuickActionCard
             href="/learn/courses"
             icon={BookOpen}
-            title="Courses"
-            description="Structured lessons by skill level"
+            title="Cursos"
+            description="Lecciones estructuradas por nivel de habilidad"
             color="primary"
           />
           <QuickActionCard
             href="/learn/games"
             icon={Gamepad2}
-            title="Practice Games"
-            description="Fun exercises to test your skills"
+            title="Juegos de Práctica"
+            description="Ejercicios divertidos para poner a prueba tus habilidades"
             color="secondary"
           />
           <QuickActionCard
             href="/learn/achievements"
             icon={Trophy}
-            title="Achievements"
-            description="Track your milestones"
+            title="Logros"
+            description="Sigue tus hitos"
             color="accent"
           />
         </div>
 
         {/* Continue learning */}
         {enrolledCourses.length > 0 && (
-          <section className="mt-12">
+          <section className="mt-8">
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-foreground">Continue Learning</h2>
+              <h2 className="text-xl font-bold text-foreground">Continuar Aprendiendo</h2>
               <Link href="/learn/courses">
                 <Button variant="ghost" size="sm" className="gap-1 text-muted-foreground hover:text-primary">
-                  View All
+                  Ver Todo
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </Link>
@@ -114,10 +114,10 @@ export default function LearnPage() {
         {/* Practice Games */}
         <section className="mt-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-foreground">Quick Practice</h2>
+            <h2 className="text-xl font-bold text-foreground">Práctica Rápida</h2>
             <Link href="/learn/games">
               <Button variant="ghost" size="sm" className="gap-1 text-muted-foreground hover:text-primary">
-                All Games
+                Todos los Juegos
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
@@ -132,10 +132,10 @@ export default function LearnPage() {
         {/* Recent Achievements */}
         <section className="mt-12">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-foreground">Recent Achievements</h2>
+            <h2 className="text-xl font-bold text-foreground">Logros Recientes</h2>
             <Link href="/learn/achievements">
               <Button variant="ghost" size="sm" className="gap-1 text-muted-foreground hover:text-primary">
-                View All
+                Ver Todo
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
@@ -151,17 +151,17 @@ export default function LearnPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-12 rounded-2xl bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 p-6"
+          className="mt-8 rounded-2xl bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 p-5"
         >
           <div className="flex items-start gap-4">
             <div className="rounded-xl bg-primary/20 p-3">
               <Sparkles className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Tip of the Day</h3>
+              <h3 className="font-semibold text-foreground">Consejo del Día</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Facial expressions are a crucial part of sign language grammar. They can change the meaning of a sign 
-                from a statement to a question, or indicate intensity. Practice in front of a mirror to improve!
+                Las expresiones faciales son una parte fundamental de la gramática de la lengua de señas. Pueden cambiar
+                el significado de una seña de declaración a pregunta, o indicar intensidad. ¡Practica frente a un espejo para mejorar!
               </p>
             </div>
           </div>

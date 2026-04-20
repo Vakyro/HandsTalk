@@ -6,19 +6,19 @@ import { SectionHeader } from '@/components/ui/section-header'
 
 export function HowItWorksSection() {
   return (
-    <section className="py-20 sm:py-28 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-14 sm:py-20 bg-gradient-to-b from-muted/30 to-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="How It Works"
-          title="Simple, Powerful Translation"
-          description="Whether you're translating sign to text or text to sign, our platform makes it seamless."
+          badge="Cómo Funciona"
+          title="Traducción Simple y Poderosa"
+          description="Ya sea que traduzcas seña a texto o texto a seña, nuestra plataforma lo hace sencillo."
         />
 
-        <div className="mt-16 space-y-20">
+        <div className="mt-10 space-y-12">
           {/* Sign to Text Flow */}
           <div>
-            <h3 className="text-center text-xl font-bold text-foreground mb-10">
-              Sign to Text Translation
+            <h3 className="text-center text-lg font-bold text-foreground mb-6">
+              Traducción Seña a Texto
             </h3>
             <div className="grid gap-8 md:grid-cols-2">
               {/* Normal Mode */}
@@ -28,19 +28,19 @@ export function HowItWorksSection() {
                 viewport={{ once: true }}
                 className="rounded-2xl border border-border/50 bg-card p-6"
               >
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <div className="rounded-full bg-primary/10 p-2">
                     <Upload className="h-5 w-5 text-primary" />
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground">Normal Mode</h4>
+                  <h4 className="text-lg font-semibold text-foreground">Modo Normal</h4>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Best for full-phrase interpretation with detailed analysis
+                <p className="text-sm text-muted-foreground mb-4">
+                  Ideal para interpretación de frases completas con análisis detallado
                 </p>
                 <div className="space-y-4">
-                  <Step number={1} text="Upload or record a video of signing" />
-                  <Step number={2} text="AI processes the complete video" />
-                  <Step number={3} text="Get full interpretation with confidence score" />
+                  <Step number={1} text="Sube o graba un video señando" />
+                  <Step number={2} text="La IA procesa el video completo" />
+                  <Step number={3} text="Obtén la interpretación completa con puntuación de confianza" />
                 </div>
               </motion.div>
 
@@ -51,19 +51,19 @@ export function HowItWorksSection() {
                 viewport={{ once: true }}
                 className="rounded-2xl border border-border/50 bg-card p-6"
               >
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-4">
                   <div className="rounded-full bg-accent/10 p-2">
                     <Zap className="h-5 w-5 text-accent" />
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground">Live Mode</h4>
+                  <h4 className="text-lg font-semibold text-foreground">Modo En Vivo</h4>
                 </div>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Best for instant communication and real-time practice
+                <p className="text-sm text-muted-foreground mb-4">
+                  Ideal para comunicación instantánea y práctica en tiempo real
                 </p>
                 <div className="space-y-4">
-                  <Step number={1} text="Start your camera" />
-                  <Step number={2} text="Sign naturally to the camera" />
-                  <Step number={3} text="See live transcription as you sign" />
+                  <Step number={1} text="Activa tu cámara" />
+                  <Step number={2} text="Seña naturalmente frente a la cámara" />
+                  <Step number={3} text="Ve la transcripción en vivo mientras señas" />
                 </div>
               </motion.div>
             </div>
@@ -71,8 +71,8 @@ export function HowItWorksSection() {
 
           {/* Text to Sign Flow */}
           <div>
-            <h3 className="text-center text-xl font-bold text-foreground mb-10">
-              Text to Sign Video Generation
+            <h3 className="text-center text-lg font-bold text-foreground mb-6">
+              Generación de Video Texto a Seña
             </h3>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,22 +81,22 @@ export function HowItWorksSection() {
               className="mx-auto max-w-3xl"
             >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                <FlowStep 
-                  icon={Type} 
-                  title="Enter Text" 
-                  description="Type any phrase or sentence"
+                <FlowStep
+                  icon={Type}
+                  title="Ingresar Texto"
+                  description="Escribe cualquier frase u oración"
                 />
                 <ArrowIcon />
-                <FlowStep 
-                  icon={Video} 
-                  title="Generate" 
-                  description="AI creates sign language video"
+                <FlowStep
+                  icon={Video}
+                  title="Generar"
+                  description="La IA crea el video de lengua de señas"
                 />
                 <ArrowIcon />
-                <FlowStep 
-                  icon={Play} 
-                  title="Watch & Save" 
-                  description="View, adjust speed, and save"
+                <FlowStep
+                  icon={Play}
+                  title="Ver y Guardar"
+                  description="Visualiza, ajusta velocidad y guarda"
                 />
               </div>
             </motion.div>
@@ -104,8 +104,8 @@ export function HowItWorksSection() {
 
           {/* Learning Flow */}
           <div>
-            <h3 className="text-center text-xl font-bold text-foreground mb-10">
-              Learn at Your Own Pace
+            <h3 className="text-center text-lg font-bold text-foreground mb-6">
+              Aprende a Tu Propio Ritmo
             </h3>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -114,24 +114,24 @@ export function HowItWorksSection() {
               className="mx-auto max-w-3xl"
             >
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                <FlowStep 
-                  icon={BookOpen} 
-                  title="Choose Course" 
-                  description="Pick your skill level"
+                <FlowStep
+                  icon={BookOpen}
+                  title="Elegir Curso"
+                  description="Selecciona tu nivel de habilidad"
                   color="secondary"
                 />
                 <ArrowIcon />
-                <FlowStep 
-                  icon={Play} 
-                  title="Practice" 
-                  description="Interactive exercises"
+                <FlowStep
+                  icon={Play}
+                  title="Practicar"
+                  description="Ejercicios interactivos"
                   color="secondary"
                 />
                 <ArrowIcon />
-                <FlowStep 
-                  icon={Zap} 
-                  title="Earn Rewards" 
-                  description="XP, badges, and streaks"
+                <FlowStep
+                  icon={Zap}
+                  title="Ganar Recompensas"
+                  description="XP, insignias y rachas"
                   color="secondary"
                 />
               </div>
@@ -167,8 +167,8 @@ function FlowStep({
 }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className={`rounded-2xl p-4 ${color === 'primary' ? 'bg-primary/10' : 'bg-secondary'}`}>
-        <Icon className={`h-8 w-8 ${color === 'primary' ? 'text-primary' : 'text-secondary-foreground'}`} />
+      <div className={`rounded-xl p-3 ${color === 'primary' ? 'bg-primary/10' : 'bg-secondary'}`}>
+        <Icon className={`h-6 w-6 ${color === 'primary' ? 'text-primary' : 'text-secondary-foreground'}`} />
       </div>
       <h4 className="mt-3 font-semibold text-foreground">{title}</h4>
       <p className="mt-1 text-xs text-muted-foreground">{description}</p>

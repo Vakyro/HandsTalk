@@ -1,0 +1,315 @@
+<div style="font-family: var(--font-sans); padding: 0;">
+
+<style>
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--color-background-secondary); padding: 10px 12px; text-align: left; font-weight: 500; border-bottom: 1px solid var(--color-border-tertiary); }
+td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+tr:hover { background: var(--color-background-secondary); }
+.recom { color: var(--color-text-info); font-weight: 500; }
+.warn { color: var(--color-text-warning); font-weight: 500; }
+.good { color: var(--color-text-success); }
+.alt { color: var(--color-text-secondary); }
+</style>
+
+<div style="margin-bottom: 20px;">
+  <h2 style="font-size: 16px; font-weight: 500; margin: 0 0 12px 0; color: var(--color-text-primary);">Comparativa de Opciones Tecnológicas</h2>
+  
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Frontend Framework</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>Next.js 15</strong></td>
+      <td class="good">✓ SSR/SSG nativo, API routes, Vercel integration, TypeScript first</td>
+      <td>Curva de aprendizaje moderada</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>Vite + React</td>
+      <td class="alt">Más ligero, bundling rápido</td>
+      <td>No tiene API routes, SPA only</td>
+      <td>Alternativa si no necesitas backend</td>
+    </tr>
+    <tr>
+      <td>Nuxt 3</td>
+      <td class="alt">Bueno para Vue, SSR similar a Next</td>
+      <td>Comunidad React mucho más grande para ML</td>
+      <td>No recomendado para este proyecto</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Database</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>Neon (PostgreSQL)</strong></td>
+      <td class="good">✓ Serverless, autoscale, cheap, SQL completo</td>
+      <td>Cold starts ocasionales</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>Firebase / Firestore</td>
+      <td class="alt">NoSQL, tiempo real, easy auth</td>
+      <td>Queries complejas difíciles, costos por lectura, vendor lock-in</td>
+      <td>Alternativa si prefieres NoSQL</td>
+    </tr>
+    <tr>
+      <td>Supabase (PostgreSQL)</td>
+      <td class="alt">PostgreSQL + auth + storage integrados</td>
+      <td>Pricing puede ser caro a escala</td>
+      <td>Alternativa viable (usamos su Storage)</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">ML Framework (Entrenamiento)</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>PyTorch + PyTorch Lightning</strong></td>
+      <td class="good">✓ Flexible, research-friendly, comunidad gigante, bueno para Transformers</td>
+      <td>Más verbose que TF/Keras</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>TensorFlow + Keras</td>
+      <td class="alt">Bueno para production, mais alto nivel</td>
+      <td>Menos flexible para investigación, comunidad ML menos activa</td>
+      <td>Alternativa si tienes experiencia TF</td>
+    </tr>
+    <tr>
+      <td>JAX</td>
+      <td class="alt">Muy flexible, functional</td>
+      <td>Curva de aprendizaje empinada, menos ejemplos de seq2seq</td>
+      <td>Solo si eres un expert en JAX</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Feature Extraction (MediaPipe)</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>MediaPipe (Google)</strong></td>
+      <td class="good">✓ Real-time, browser + server, multi-platform, free, excelente para señas</td>
+      <td>No perfecta (puede perder dedos en oclusión)</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>OpenPose</td>
+      <td class="alt">Muy preciso para cuerpo</td>
+      <td>Lento, no tiene hands good, menos desarrollado ahora</td>
+      <td>Complemento opcional para refinar</td>
+    </tr>
+    <tr>
+      <td>Blazepose</td>
+      <td class="alt">Ligero, mobile-friendly</td>
+      <td>Menos preciso que MediaPipe Pose completo</td>
+      <td>Alternativa si necesitas móvil offline</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Temporal Encoding (Sequence Modeling)</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>Transformer Encoder</strong></td>
+      <td class="good">✓ Self-attention (mejor coarticulación), paralelizable, visualizable, estado-del-arte</td>
+      <td>Necesita más datos, compute costoso</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>TCN (Temporal Conv)</td>
+      <td class="alt">Más ligero, bueno para secuencias cortas</td>
+      <td>Receptive field limitado, menos interpretable</td>
+      <td>Alternativa para MVP ligero</td>
+    </tr>
+    <tr>
+      <td>LSTM Bidireccional</td>
+      <td class="alt">Clásico, probado, menos compute</td>
+      <td>Vanishing gradient, peor coarticulación que attention</td>
+      <td>Fallback si Transformer es muy lento</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Translation (Gloss → Español)</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>HuggingFace Transformers (fine-tuned NMT)</strong></td>
+      <td class="good">✓ Modelos pre-entrenados, easy to fine-tune, comunidad gigante</td>
+      <td>Requiere tuning, dataset LSM→español para entrenar</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>Claude API (LLM)</td>
+      <td class="alt">Muy bueno para correcciones y contexto, fácil integración</td>
+      <td>Costo por token, no es modelo entrenado para señas, latencia</td>
+      <td>Complemento (v2.5+), no primario</td>
+    </tr>
+    <tr>
+      <td>Google Translate API</td>
+      <td class="alt">Confiable, mantenido por Google</td>
+      <td>No entiende glosses de señas, costo por request, no customizable</td>
+      <td>No recomendado para este caso</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Authentication</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>NextAuth.js v5</strong></td>
+      <td class="good">✓ OAuth2, JWT nativo Next.js, sin vendor lock-in, gratuito</td>
+      <td>Setup inicial, mantenimiento propio</td>
+      <td class="recom">ELEGIDO</td>
+    </tr>
+    <tr>
+      <td>Auth0</td>
+      <td class="alt">Enterprise-ready, muchas features, soporte 24/7</td>
+      <td>Caro, overkill para MVP, vendor lock-in</td>
+      <td>Alternativa para v3.0 (enterprise)</td>
+    </tr>
+    <tr>
+      <td>Supabase Auth</td>
+      <td class="alt">Integrado con Supabase, fácil si usas Storage</td>
+      <td>Menos flexible que NextAuth</td>
+      <td>Alternativa si eliges Supabase para todo</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Video Storage</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>Supabase Storage</strong></td>
+      <td class="good">✓ Integrado, fácil auth, CDN, barato para MVP</td>
+      <td>Escalabilidad limitada a muy grande escala</td>
+      <td class="recom">ELEGIDO (MVP)</td>
+    </tr>
+    <tr>
+      <td>AWS S3</td>
+      <td class="alt">Escalable infinitamente, CloudFront CDN, barato a escala</td>
+      <td>Setup más complejo, curva aprendizaje AWS, pricing opaco</td>
+      <td>Escala a v2.5+ si creces exponencialmente</td>
+    </tr>
+    <tr>
+      <td>Cloudinary</td>
+      <td class="alt">Optimización automática, transformación de video, fácil</td>
+      <td>Menos control, pricing variable, vendor lock-in</td>
+      <td>Alternativa si necesitas transformación automática</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Deployment / Hosting</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>Vercel</strong></td>
+      <td class="good">✓ Next.js nativo, serverless, auto-scale, CDN, free tier, preview deployments</td>
+      <td>Vendor lock-in, procesamiento ML limitado en functions</td>
+      <td class="recom">ELEGIDO (Frontend + API)</td>
+    </tr>
+    <tr>
+      <td>Railway / Render</td>
+      <td class="alt">Flexible, mejor para monolitos, pricing simple</td>
+      <td>No optimizado para Next.js, más overhead</td>
+      <td>Alternativa si necesitas control total</td>
+    </tr>
+    <tr>
+      <td>Docker + Kubernetes</td>
+      <td class="alt">Control total, multi-region, bueno para ML (GPU)</td>
+      <td>Overhead operacional alto, overkill para MVP</td>
+      <td>v3.0+ cuando necesites auto-scaling ML</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size: 14px; font-weight: 500; margin: 16px 0 8px 0; color: var(--color-text-primary);">Job Queue (Async Processing)</h3>
+  <table>
+    <tr>
+      <th>Opción</th>
+      <th>Ventajas</th>
+      <th>Desventajas</th>
+      <th>Recomendación</th>
+    </tr>
+    <tr>
+      <td><strong>Bull (Redis)</strong></td>
+      <td class="good">✓ Fácil, in-memory, persistence, retry logic, delay jobs</td>
+      <td>Single point of failure (Redis), no distributed state</td>
+      <td class="recom">ELEGIDO (MVP)</td>
+    </tr>
+    <tr>
+      <td>Temporal.io</td>
+      <td class="alt">Distribuido, resiliente, logs de ejecución, muy robusto</td>
+      <td>Setup más complejo, overhead operacional, overkill para MVP</td>
+      <td>Upgrade cuando escales a v2.5+</td>
+    </tr>
+    <tr>
+      <td>AWS SQS</td>
+      <td class="alt">Managed, auto-scale, integración con Lambda</td>
+      <td>Vendor lock-in AWS, pricing por mensaje</td>
+      <td>Alternativa si usas AWS para todo</td>
+    </tr>
+  </table>
+
+</div>
+
+<div style="margin-top: 20px; padding: 12px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); font-size: 13px;">
+  <p style="margin: 0 0 8px 0; color: var(--color-text-primary); font-weight: 500;">📊 Resumen de Decisiones</p>
+  <ul style="margin: 0; padding-left: 20px; color: var(--color-text-secondary);">
+    <li>Frontend: Next.js 15 (SSR, API routes, Vercel native)</li>
+    <li>Database: Neon PostgreSQL (serverless, autoscale, SQL)</li>
+    <li>ML Training: PyTorch + Lightning (flexible, Transformers)</li>
+    <li>Features: MediaPipe (real-time, browser + server)</li>
+    <li>Temporal: Transformer Encoder (coarticulación, attention)</li>
+    <li>Translation: HuggingFace NMT (fine-tuned, comunidad)</li>
+    <li>Auth: NextAuth.js (sin vendor lock-in, OAuth2)</li>
+    <li>Storage: Supabase (MVP), AWS S3 (scale v2.5+)</li>
+    <li>Deployment: Vercel (Next.js native)</li>
+    <li>Queue: Bull + Redis (simple, effective)</li>
+  </ul>
+</div>
+
+</div>

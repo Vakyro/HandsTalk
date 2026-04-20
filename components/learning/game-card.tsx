@@ -30,9 +30,15 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
   const Icon = iconMap[game.icon] || Grid3X3
 
   const difficultyColors = {
-    easy: 'bg-green-100 text-green-700',
+    easy: 'bg-secondary/50 text-secondary-foreground',
     medium: 'bg-primary/10 text-primary',
     hard: 'bg-accent/10 text-accent',
+  }
+
+  const difficultyLabels: Record<string, string> = {
+    easy: 'Fácil',
+    medium: 'Medio',
+    hard: 'Difícil',
   }
 
   return (
@@ -51,7 +57,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           "rounded-full px-2.5 py-0.5 text-xs font-medium capitalize",
           difficultyColors[game.difficulty]
         )}>
-          {game.difficulty}
+          {difficultyLabels[game.difficulty] || game.difficulty}
         </span>
       </div>
 
@@ -78,12 +84,12 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
       <div className="mt-4 flex items-center gap-4 text-xs text-muted-foreground">
         <span className="flex items-center gap-1">
           <Play className="h-3.5 w-3.5" />
-          {game.playCount} plays
+          {game.playCount} partidas
         </span>
         {game.bestScore && (
           <span className="flex items-center gap-1 text-primary">
             <Trophy className="h-3.5 w-3.5" />
-            Best: {game.bestScore}
+            Mejor: {game.bestScore}
           </span>
         )}
       </div>
@@ -92,7 +98,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
       <Link href={`/learn/practice/${game.id}`} className="block mt-4">
         <Button className="w-full gap-2 bg-primary hover:bg-primary/90">
           <Play className="h-4 w-4" />
-          Play Now
+          Jugar Ahora
         </Button>
       </Link>
     </motion.div>

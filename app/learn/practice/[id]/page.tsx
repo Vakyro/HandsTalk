@@ -65,9 +65,9 @@ export default function PracticePage({ params }: PracticePageProps) {
     
     if (correct) {
       setScore(s => s + 10)
-      toast.success('Correct! +10 XP')
+      toast.success('¡Correcto! +10 XP')
     } else {
-      toast.error('Not quite right. Try the next one!')
+      toast.error('¡No fue correcto! Continúa con el siguiente.')
     }
   }
 
@@ -108,26 +108,26 @@ export default function PracticePage({ params }: PracticePageProps) {
             <div className="mx-auto mb-6 rounded-full bg-primary/10 p-6 w-fit">
               <Trophy className="h-16 w-16 text-primary" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground">Practice Complete!</h1>
+            <h1 className="text-3xl font-bold text-foreground">¡Práctica Completada!</h1>
             <p className="mt-2 text-muted-foreground">
-              You scored {score} XP in this practice session
+              Obtuviste {score} XP en esta sesión de práctica
             </p>
             
             <div className="mt-8 rounded-2xl border border-border/50 bg-card p-6">
               <div className="text-4xl font-bold text-primary mb-2">{score} XP</div>
               <p className="text-sm text-muted-foreground">
-                {exercises.length} exercises completed
+                {exercises.length} ejercicios completados
               </p>
             </div>
 
             <div className="mt-8 flex gap-4 justify-center">
               <Button variant="outline" onClick={() => router.push('/learn')}>
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Learn
+                Volver a Aprender
               </Button>
               <Button onClick={handleRetry} className="bg-primary hover:bg-primary/90">
                 <RotateCcw className="mr-2 h-4 w-4" />
-                Practice Again
+                Practicar de Nuevo
               </Button>
             </div>
           </motion.div>
@@ -151,7 +151,7 @@ export default function PracticePage({ params }: PracticePageProps) {
             className="gap-1"
           >
             <ArrowLeft className="h-4 w-4" />
-            Exit
+            Salir
           </Button>
           <div className="text-sm text-muted-foreground">
             {currentIndex + 1} / {exercises.length}
@@ -194,7 +194,7 @@ export default function PracticePage({ params }: PracticePageProps) {
               <div className="mb-6 aspect-video rounded-xl bg-muted flex items-center justify-center">
                 <div className="text-center text-muted-foreground">
                   <Camera className="mx-auto h-12 w-12 mb-2" />
-                  <p className="text-sm">Sign language demonstration</p>
+                  <p className="text-sm">Demostración de lengua de señas</p>
                 </div>
               </div>
             )}
@@ -208,24 +208,24 @@ export default function PracticePage({ params }: PracticePageProps) {
                     onClick={() => !isSubmitted && setSelectedAnswer(option)}
                     disabled={isSubmitted}
                     className={cn(
-                      "w-full rounded-xl border p-4 text-left transition-colors",
+                      "w-full cursor-pointer rounded-xl border p-4 text-left transition-colors disabled:cursor-not-allowed",
                       selectedAnswer === option
                         ? isSubmitted
                           ? isCorrect
-                            ? "border-green-500 bg-green-50"
+                            ? "border-primary bg-primary/10"
                             : option === currentExercise.correctAnswer
-                              ? "border-green-500 bg-green-50"
+                              ? "border-primary bg-primary/10"
                               : "border-accent bg-accent/10"
                           : "border-primary bg-primary/5"
                         : isSubmitted && option === currentExercise.correctAnswer
-                          ? "border-green-500 bg-green-50"
+                          ? "border-primary bg-primary/10"
                           : "border-border/50 hover:border-primary/50 hover:bg-muted/30"
                     )}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-foreground">{option}</span>
                       {isSubmitted && option === currentExercise.correctAnswer && (
-                        <Check className="h-5 w-5 text-green-500" />
+                        <Check className="h-5 w-5 text-primary" />
                       )}
                       {isSubmitted && selectedAnswer === option && !isCorrect && option !== currentExercise.correctAnswer && (
                         <X className="h-5 w-5 text-accent" />
@@ -241,16 +241,16 @@ export default function PracticePage({ params }: PracticePageProps) {
                 <Input
                   value={typedAnswer}
                   onChange={(e) => setTypedAnswer(e.target.value)}
-                  placeholder="Type your answer..."
+                  placeholder="Escribe tu respuesta..."
                   disabled={isSubmitted}
                   className={cn(
                     "h-12 text-lg border-border/50",
-                    isSubmitted && (isCorrect ? "border-green-500" : "border-accent")
+                    isSubmitted && (isCorrect ? "border-primary" : "border-accent")
                   )}
                 />
                 {isSubmitted && !isCorrect && (
                   <p className="text-sm text-muted-foreground">
-                    Correct answer: <span className="font-medium text-foreground">{currentExercise.correctAnswer}</span>
+                    Respuesta correcta: <span className="font-medium text-foreground">{currentExercise.correctAnswer}</span>
                   </p>
                 )}
               </div>
@@ -260,20 +260,30 @@ export default function PracticePage({ params }: PracticePageProps) {
               <div className="space-y-4">
                 <div className="aspect-video rounded-xl bg-muted flex flex-col items-center justify-center">
                   <Camera className="h-12 w-12 text-muted-foreground mb-2" />
-                  <p className="text-muted-foreground">Camera preview would appear here</p>
+                  <p className="text-muted-foreground">La vista previa de la cámara aparecerá aquí</p>
                   <p className="text-sm text-muted-foreground mt-1">
-                    Sign: "{currentExercise.correctAnswer}"
+                    Seña: "{currentExercise.correctAnswer}"
                   </p>
                 </div>
-                {!isSubmitted && (
-                  <Button 
-                    onClick={handleSubmit}
-                    className="w-full gap-2 bg-primary hover:bg-primary/90"
-                  >
-                    <Camera className="h-4 w-4" />
-                    Submit Recording
-                  </Button>
-                )}
+                <div className="flex justify-end gap-3">
+                  {!isSubmitted ? (
+                    <Button
+                      onClick={handleSubmit}
+                      className="gap-2 bg-primary hover:bg-primary/90"
+                    >
+                      <Camera className="h-4 w-4" />
+                      Enviar Grabación
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={handleNext}
+                      className="gap-2 bg-primary hover:bg-primary/90"
+                    >
+                      {currentIndex < exercises.length - 1 ? 'Continuar' : 'Finalizar'}
+                      <ArrowRight className="h-4 w-4" />
+                    </Button>
+                  )}
+                </div>
               </div>
             )}
 
@@ -294,10 +304,10 @@ export default function PracticePage({ params }: PracticePageProps) {
                 ) : (
                   <button
                     onClick={() => setShowHint(true)}
-                    className="text-sm text-muted-foreground hover:text-primary flex items-center gap-1"
+                    className="cursor-pointer text-sm text-muted-foreground hover:text-primary flex items-center gap-1"
                   >
                     <Lightbulb className="h-4 w-4" />
-                    Show hint
+                    Mostrar pista
                   </button>
                 )}
               </div>
@@ -312,14 +322,14 @@ export default function PracticePage({ params }: PracticePageProps) {
                     disabled={currentExercise.type === 'multiple_choice' ? !selectedAnswer : !typedAnswer.trim()}
                     className="bg-primary hover:bg-primary/90"
                   >
-                    Check Answer
+                    Verificar Respuesta
                   </Button>
                 ) : (
                   <Button
                     onClick={handleNext}
                     className="gap-2 bg-primary hover:bg-primary/90"
                   >
-                    {currentIndex < exercises.length - 1 ? 'Continue' : 'Finish'}
+                    {currentIndex < exercises.length - 1 ? 'Continuar' : 'Finalizar'}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 )}

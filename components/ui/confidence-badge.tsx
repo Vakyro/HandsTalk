@@ -16,7 +16,7 @@ export function ConfidenceBadge({
   const percentage = Math.round(confidence * 100)
   
   const getColor = () => {
-    if (percentage >= 85) return 'bg-green-100 text-green-700 border-green-200'
+    if (percentage >= 85) return 'bg-secondary/50 text-secondary-foreground border-secondary/50'
     if (percentage >= 70) return 'bg-primary/10 text-primary border-primary/20'
     if (percentage >= 50) return 'bg-secondary text-secondary-foreground border-secondary'
     return 'bg-accent/10 text-accent border-accent/20'

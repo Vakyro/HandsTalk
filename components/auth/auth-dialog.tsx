@@ -37,16 +37,16 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
       if (mode === 'login') {
         success = await login(email, password)
         if (success) {
-          toast.success('Welcome back!')
+          toast.success('¡Bienvenido de vuelta!')
         } else {
-          toast.error('Invalid credentials. Please try again.')
+          toast.error('Credenciales incorrectas. Por favor intenta de nuevo.')
         }
       } else {
         success = await signup(email, password, name)
         if (success) {
-          toast.success('Account created successfully!')
+          toast.success('¡Cuenta creada exitosamente!')
         } else {
-          toast.error('Could not create account. Please try again.')
+          toast.error('No se pudo crear la cuenta. Por favor intenta de nuevo.')
         }
       }
 
@@ -57,7 +57,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
         setName('')
       }
     } catch {
-      toast.error('Something went wrong. Please try again.')
+      toast.error('Algo salió mal. Por favor intenta de nuevo.')
     } finally {
       setIsLoading(false)
     }
@@ -72,13 +72,13 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
           </div>
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-foreground">
-              {mode === 'login' ? 'Welcome Back' : 'Join HandsTalk'}
+              {mode === 'login' ? 'Bienvenido de Vuelta' : 'Únete a HandsTalk'}
             </DialogTitle>
           </DialogHeader>
           <p className="mt-2 text-sm text-muted-foreground">
-            {mode === 'login' 
-              ? 'Sign in to continue your learning journey' 
-              : 'Start your sign language learning adventure'}
+            {mode === 'login'
+              ? 'Inicia sesión para continuar tu viaje de aprendizaje'
+              : 'Comienza tu aventura de aprendizaje de lengua de señas'}
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
                     <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
                     <Input
                       type="text"
-                      placeholder="Your name"
+                      placeholder="Tu nombre"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       className="pl-10 h-12 border-border/50 bg-muted/30 focus:border-primary"
@@ -111,7 +111,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
               <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="email"
-                placeholder="Email address"
+                placeholder="Correo electrónico"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="pl-10 h-12 border-border/50 bg-muted/30 focus:border-primary"
@@ -123,7 +123,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
               <Lock className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
               <Input
                 type="password"
-                placeholder="Password"
+                placeholder="Contraseña"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="pl-10 h-12 border-border/50 bg-muted/30 focus:border-primary"
@@ -140,7 +140,7 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
               {isLoading ? (
                 <Loader2 className="h-5 w-5 animate-spin" />
               ) : (
-                mode === 'login' ? 'Sign In' : 'Create Account'
+                mode === 'login' ? 'Iniciar Sesión' : 'Crear Cuenta'
               )}
             </Button>
           </form>
@@ -149,11 +149,11 @@ export function AuthDialog({ open, onOpenChange }: AuthDialogProps) {
             <button
               type="button"
               onClick={() => setMode(mode === 'login' ? 'signup' : 'login')}
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="cursor-pointer text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              {mode === 'login' 
-                ? "Don't have an account? Sign up" 
-                : 'Already have an account? Sign in'}
+              {mode === 'login'
+                ? '¿No tienes cuenta? Regístrate'
+                : '¿Ya tienes cuenta? Inicia sesión'}
             </button>
           </div>
         </div>

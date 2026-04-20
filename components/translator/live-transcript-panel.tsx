@@ -38,7 +38,7 @@ export function LiveTranscriptPanel({
 
   const copyTranscript = () => {
     navigator.clipboard.writeText(fullTranscript)
-    toast.success('Transcript copied to clipboard')
+    toast.success('Transcripción copiada al portapapeles')
   }
 
   return (
@@ -47,7 +47,7 @@ export function LiveTranscriptPanel({
       <div className="flex items-center justify-between border-b border-border/50 p-4">
         <div className="flex items-center gap-2">
           <MessageSquare className="h-5 w-5 text-primary" />
-          <h3 className="font-semibold text-foreground">Live Transcript</h3>
+          <h3 className="font-semibold text-foreground">Transcripción en Vivo</h3>
         </div>
         <div className="flex items-center gap-2">
           <Button
@@ -82,7 +82,7 @@ export function LiveTranscriptPanel({
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs text-muted-foreground mb-1">Currently detecting:</p>
+                <p className="text-xs text-muted-foreground mb-1">Detectando actualmente:</p>
                 <p className="text-lg font-medium text-primary">{currentPhrase}</p>
               </div>
               <ConfidenceBadge confidence={currentConfidence} size="sm" />
@@ -100,10 +100,10 @@ export function LiveTranscriptPanel({
           <div className="flex h-full flex-col items-center justify-center text-center">
             <MessageSquare className="h-12 w-12 text-muted-foreground/30" />
             <p className="mt-4 text-muted-foreground">
-              Start signing to see the transcript here
+              Comienza a señar para ver la transcripción aquí
             </p>
             <p className="mt-1 text-sm text-muted-foreground/70">
-              Words will appear as they are recognized
+              Las palabras aparecerán conforme se reconozcan
             </p>
           </div>
         ) : (
@@ -135,7 +135,7 @@ export function LiveTranscriptPanel({
           className="w-full gap-2 bg-primary hover:bg-primary/90"
         >
           <Download className="h-4 w-4" />
-          Save Transcript
+          Guardar Transcripción
         </Button>
       </div>
     </div>

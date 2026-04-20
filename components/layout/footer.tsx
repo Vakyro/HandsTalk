@@ -5,34 +5,34 @@ import { Hand, Github, Twitter, Linkedin } from 'lucide-react'
 
 const footerLinks = {
   product: [
-    { label: 'Sign to Text', href: '/sign-to-text' },
-    { label: 'Text to Sign', href: '/text-to-sign' },
-    { label: 'Learn', href: '/learn' },
-    { label: 'Saved', href: '/saved' },
+    { label: 'Seña a Texto', href: '/sign-to-text' },
+    { label: 'Texto a Seña', href: '/text-to-sign' },
+    { label: 'Aprender', href: '/learn' },
+    { label: 'Guardados', href: '/saved' },
   ],
   resources: [
-    { label: 'Documentation', href: '#' },
-    { label: 'API Reference', href: '#' },
-    { label: 'Community', href: '#' },
+    { label: 'Documentación', href: '#' },
+    { label: 'Referencia de API', href: '#' },
+    { label: 'Comunidad', href: '#' },
     { label: 'Blog', href: '#' },
   ],
   company: [
-    { label: 'About', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Contact', href: '#' },
-    { label: 'Press', href: '#' },
+    { label: 'Acerca de', href: '#' },
+    { label: 'Empleos', href: '#' },
+    { label: 'Contacto', href: '#' },
+    { label: 'Prensa', href: '#' },
   ],
   legal: [
-    { label: 'Privacy', href: '#' },
-    { label: 'Terms', href: '#' },
-    { label: 'Accessibility', href: '#' },
+    { label: 'Privacidad', href: '#' },
+    { label: 'Términos', href: '#' },
+    { label: 'Accesibilidad', href: '#' },
   ],
 }
 
 export function Footer() {
   return (
     <footer className="border-t border-border/50 bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-6">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -43,7 +43,7 @@ export function Footer() {
               <span className="text-xl font-bold text-foreground">HandsTalk</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
-              Breaking communication barriers with AI-powered sign language translation and learning.
+              Rompiendo barreras de comunicación con traducción de lengua de señas impulsada por IA y aprendizaje interactivo.
             </p>
             <div className="mt-6 flex gap-4">
               <SocialLink href="#" icon={Twitter} label="Twitter" />
@@ -54,7 +54,7 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Product</h3>
+            <h3 className="text-sm font-semibold text-foreground">Producto</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.label}>
@@ -70,7 +70,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Resources</h3>
+            <h3 className="text-sm font-semibold text-foreground">Recursos</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
@@ -86,7 +86,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Company</h3>
+            <h3 className="text-sm font-semibold text-foreground">Compañía</h3>
             <ul className="mt-4 space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -103,6 +103,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold text-foreground">Legal</h3>
+
             <ul className="mt-4 space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
@@ -118,9 +119,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border/50 pt-8">
+        <div className="mt-8 border-t border-border/50 pt-6">
           <p className="text-center text-sm text-muted-foreground">
-            {new Date().getFullYear()} HandsTalk. All rights reserved. Making communication accessible for everyone.
+            {new Date().getFullYear()} HandsTalk. Todos los derechos reservados. Haciendo la comunicación accesible para todos.
           </p>
         </div>
       </div>

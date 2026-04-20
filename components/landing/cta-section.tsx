@@ -7,13 +7,13 @@ import { Button } from '@/components/ui/button'
 
 export function CTASection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-8 sm:p-12 lg:p-16"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary/80 p-6 sm:p-10 lg:p-12"
         >
           {/* Background decoration */}
           <div className="absolute inset-0 overflow-hidden">
@@ -27,31 +27,31 @@ export function CTASection() {
             </div>
 
             <h2 className="text-3xl font-bold text-white sm:text-4xl text-balance">
-              Ready to Break Communication Barriers?
+              ¿Listo para Romper las Barreras de Comunicación?
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg text-white/90 text-pretty">
-              Join thousands of users who are already translating, learning, 
-              and connecting through sign language. Start your journey today.
+              Únete a miles de usuarios que ya están traduciendo, aprendiendo
+              y conectando a través de la lengua de señas. Comienza tu viaje hoy.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href="/sign-to-text">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="h-12 px-8 bg-white text-primary hover:bg-white/90 text-base font-semibold"
                 >
-                  Try Translation
+                  Probar Traducción
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/learn">
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="h-12 px-8 border-white/30 bg-white/10 text-white hover:bg-white/20 text-base"
                 >
-                  Start Learning Free
+                  Comenzar a Aprender Gratis
                 </Button>
               </Link>
             </div>

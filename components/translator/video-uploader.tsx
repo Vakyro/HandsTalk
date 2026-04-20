@@ -87,7 +87,7 @@ export function VideoUploader({ onVideoSelect }: VideoUploaderProps) {
               />
               <button
                 onClick={clearSelection}
-                className="absolute right-2 top-2 rounded-full bg-foreground/80 p-1.5 text-background transition-colors hover:bg-foreground"
+                className="absolute right-2 top-2 cursor-pointer rounded-full bg-foreground/80 p-1.5 text-background transition-colors hover:bg-foreground"
                 aria-label="Remove video"
               >
                 <X className="h-4 w-4" />
@@ -108,10 +108,10 @@ export function VideoUploader({ onVideoSelect }: VideoUploaderProps) {
 
             <div className="flex items-center justify-center gap-4">
               <Button variant="outline" onClick={clearSelection}>
-                Choose Different Video
+                Elegir Otro Video
               </Button>
               <Button onClick={confirmSelection} className="bg-primary hover:bg-primary/90">
-                Process This Video
+                Procesar Este Video
               </Button>
             </div>
           </motion.div>
@@ -131,23 +131,23 @@ export function VideoUploader({ onVideoSelect }: VideoUploaderProps) {
                 : 'border-border/50 bg-muted/30 hover:border-primary/50 hover:bg-muted/50'
             }`}
           >
-            <div className="flex flex-col items-center gap-4 p-8 text-center">
-              <div className={`rounded-full p-4 transition-colors ${isDragging ? 'bg-primary/10' : 'bg-muted'}`}>
+            <div className="flex flex-col items-center gap-3 p-6 text-center">
+              <div className={`rounded-full p-3 transition-colors ${isDragging ? 'bg-primary/10' : 'bg-muted'}`}>
                 {isDragging ? (
-                  <Video className="h-10 w-10 text-primary" />
+                  <Video className="h-8 w-8 text-primary" />
                 ) : (
-                  <Upload className="h-10 w-10 text-muted-foreground" />
+                  <Upload className="h-8 w-8 text-muted-foreground" />
                 )}
               </div>
               <div>
                 <p className="font-medium text-foreground">
-                  {isDragging ? 'Drop your video here' : 'Upload a video'}
+                  {isDragging ? 'Suelta tu video aquí' : 'Subir un video'}
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Drag and drop or click to browse
+                  Arrastra y suelta o haz clic para buscar
                 </p>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  MP4, WebM, MOV up to 100MB
+                  MP4, WebM, MOV hasta 100MB
                 </p>
               </div>
             </div>

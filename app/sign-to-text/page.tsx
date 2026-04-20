@@ -21,11 +21,11 @@ type Mode = 'normal' | 'live'
 type InputMethod = 'record' | 'upload'
 
 const processingStages = [
-  'Analyzing video frames...',
-  'Detecting hand movements...',
-  'Recognizing sign patterns...',
-  'Interpreting phrase structure...',
-  'Generating translation...',
+  'Analizando fotogramas del video...',
+  'Detectando movimientos de manos...',
+  'Reconociendo patrones de señas...',
+  'Interpretando estructura de la frase...',
+  'Generando traducción...',
 ]
 
 export default function SignToTextPage() {
@@ -70,7 +70,7 @@ export default function SignToTextPage() {
       setResult(translationResult)
     } catch (error) {
       console.error('Translation error:', error)
-      toast.error('Failed to process video. Please try again.')
+      toast.error('Error al procesar el video. Por favor intenta de nuevo.')
     } finally {
       setIsProcessing(false)
     }
@@ -80,9 +80,9 @@ export default function SignToTextPage() {
     if (result && isAuthenticated) {
       saveSignToTextResult(result)
       setIsSaved(true)
-      toast.success('Translation saved!')
+      toast.success('¡Traducción guardada!')
     } else if (!isAuthenticated) {
-      toast.error('Please log in to save translations')
+      toast.error('Por favor inicia sesión para guardar traducciones')
     }
   }, [result, isAuthenticated])
 
@@ -110,7 +110,7 @@ export default function SignToTextPage() {
       },
       (error) => {
         console.error('Live translation error:', error)
-        toast.error('Live translation error')
+        toast.error('Error en traducción en vivo')
       }
     )
     liveStreamRef.current.start()
@@ -147,7 +147,7 @@ export default function SignToTextPage() {
 
   const handleSaveTranscript = useCallback(() => {
     if (!isAuthenticated) {
-      toast.error('Please log in to save transcripts')
+      toast.error('Por favor inicia sesión para guardar transcripciones')
       return
     }
     
@@ -163,7 +163,7 @@ export default function SignToTextPage() {
         timestamp: new Date().toISOString(),
       }
       saveSignToTextResult(transcriptResult)
-      toast.success('Transcript saved!')
+      toast.success('¡Transcripción guardada!')
     }
   }, [liveChunks, isAuthenticated])
 
@@ -174,9 +174,9 @@ export default function SignToTextPage() {
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground">Sign to Text</h1>
+          <h1 className="text-3xl font-bold text-foreground">Seña a Texto</h1>
           <p className="mt-2 text-muted-foreground">
-            Translate sign language videos into text using AI-powered recognition
+            Traduce videos de lengua de señas a texto usando reconocimiento impulsado por IA
           </p>
         </div>
 
@@ -185,11 +185,11 @@ export default function SignToTextPage() {
           <TabsList className="grid w-full max-w-md grid-cols-2">
             <TabsTrigger value="normal" className="gap-2">
               <Upload className="h-4 w-4" />
-              Normal Mode
+              Modo Normal
             </TabsTrigger>
             <TabsTrigger value="live" className="gap-2">
               <Zap className="h-4 w-4" />
-              Live Mode
+              Modo En Vivo
             </TabsTrigger>
           </TabsList>
         </Tabs>
@@ -205,16 +205,16 @@ export default function SignToTextPage() {
             <div>
               {mode === 'normal' ? (
                 <>
-                  <p className="font-medium text-foreground">Normal Mode</p>
+                  <p className="font-medium text-foreground">Modo Normal</p>
                   <p className="text-sm text-muted-foreground">
-                    Best for full-phrase interpretation. Record or upload a video, and our AI will process it to provide detailed translation with confidence scores and metadata.
+                    Ideal para interpretación de frases completas. Graba o sube un video, y nuestra IA lo procesará para brindarte una traducción detallada con puntuaciones de confianza y metadatos.
                   </p>
                 </>
               ) : (
                 <>
-                  <p className="font-medium text-foreground">Live Mode</p>
+                  <p className="font-medium text-foreground">Modo En Vivo</p>
                   <p className="text-sm text-muted-foreground">
-                    Best for instant communication. Sign directly to your camera and see real-time transcription as you go. Perfect for conversations and practice.
+                    Ideal para comunicación instantánea. Seña directamente a tu cámara y ve la transcripción en tiempo real. Perfecto para conversaciones y práctica.
                   </p>
                 </>
               )}
@@ -233,10 +233,10 @@ export default function SignToTextPage() {
               transition={{ duration: 0.3 }}
             >
               {isProcessing ? (
-                <div className="rounded-2xl border border-border/50 bg-card p-8">
-                  <ProcessingState 
+                <div className="rounded-2xl border border-border/50 bg-card p-6">
+                  <ProcessingState
                     progress={progress} 
-                    message="Processing your video..."
+                    message="Procesando tu video..."
                     stages={processingStages}
                   />
                 </div>
@@ -252,8 +252,8 @@ export default function SignToTextPage() {
                   {/* Input method tabs */}
                   <Tabs value={inputMethod} onValueChange={(v) => setInputMethod(v as InputMethod)}>
                     <TabsList>
-                      <TabsTrigger value="record">Record Video</TabsTrigger>
-                      <TabsTrigger value="upload">Upload Video</TabsTrigger>
+                      <TabsTrigger value="record">Grabar Video</TabsTrigger>
+                      <TabsTrigger value="upload">Subir Video</TabsTrigger>
                     </TabsList>
                   </Tabs>
 

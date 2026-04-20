@@ -36,8 +36,8 @@ export function ProgressCard({
       {/* Level and XP */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <p className="text-sm text-muted-foreground">Your Progress</p>
-          <p className="text-2xl font-bold text-foreground">Level {level}</p>
+          <p className="text-sm text-muted-foreground">Tu Progreso</p>
+          <p className="text-2xl font-bold text-foreground">Nivel {level}</p>
         </div>
         <div className="flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
           <Zap className="h-5 w-5 text-primary" />
@@ -48,8 +48,8 @@ export function ProgressCard({
       {/* XP Progress bar */}
       <div className="mb-6">
         <div className="flex justify-between text-xs text-muted-foreground mb-1">
-          <span>Progress to Level {level + 1}</span>
-          <span>{xpToNextLevel} XP needed</span>
+          <span>Progreso al Nivel {level + 1}</span>
+          <span>{xpToNextLevel} XP necesario</span>
         </div>
         <div className="h-3 rounded-full bg-muted overflow-hidden">
           <motion.div
@@ -66,25 +66,25 @@ export function ProgressCard({
         <StatItem
           icon={Flame}
           value={streak}
-          label="Day Streak"
+          label="Días Consecutivos"
           color="accent"
         />
         <StatItem
           icon={BookOpen}
           value={`${lessonsCompleted}/${totalLessons}`}
-          label="Lessons"
+          label="Lecciones"
           color="primary"
         />
         <StatItem
           icon={Clock}
           value={`${Math.floor(practiceMinutes / 60)}h`}
-          label="Practice Time"
+          label="Tiempo de Práctica"
           color="secondary"
         />
         <StatItem
           icon={Zap}
           value={signsLearned}
-          label="Signs Learned"
+          label="Señas Aprendidas"
           color="primary"
         />
       </div>

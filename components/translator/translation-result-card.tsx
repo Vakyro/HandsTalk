@@ -22,7 +22,7 @@ export function TranslationResultCard({
 }: TranslationResultCardProps) {
   const copyText = () => {
     navigator.clipboard.writeText(result.text)
-    toast.success('Text copied to clipboard')
+    toast.success('Texto copiado al portapapeles')
   }
 
   return (
@@ -37,11 +37,11 @@ export function TranslationResultCard({
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                Translation Result
+                Resultado de Traducción
               </span>
               <ConfidenceBadge confidence={result.confidence} size="sm" />
             </div>
-            <p className="text-2xl font-semibold text-foreground leading-relaxed">
+            <p className="text-xl font-semibold text-foreground leading-relaxed">
               {result.text}
             </p>
           </div>
@@ -68,9 +68,9 @@ export function TranslationResultCard({
       </div>
 
       {/* AI Metadata section */}
-      <div className="border-t border-border/50 bg-muted/30 p-6">
-        <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4">
-          AI Analysis
+      <div className="border-t border-border/50 bg-muted/30 p-4">
+        <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
+          Análisis de IA
         </h4>
         
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -80,7 +80,7 @@ export function TranslationResultCard({
               <Captions className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground mb-1">Detected Glosses</p>
+              <p className="text-xs text-muted-foreground mb-1">Glosses Detectados</p>
               <div className="flex flex-wrap gap-1">
                 {result.glosses.map((gloss, i) => (
                   <span 
@@ -100,7 +100,7 @@ export function TranslationResultCard({
               <Activity className="h-4 w-4 text-secondary-foreground" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground mb-1">Motion Cues</p>
+              <p className="text-xs text-muted-foreground mb-1">Señales de Movimiento</p>
               <ul className="space-y-0.5">
                 {result.motionCues.map((cue, i) => (
                   <li key={i} className="text-xs text-foreground">{cue}</li>
@@ -115,7 +115,7 @@ export function TranslationResultCard({
               <SmilePlus className="h-4 w-4 text-accent" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground mb-1">Facial Expressions</p>
+              <p className="text-xs text-muted-foreground mb-1">Expresiones Faciales</p>
               <ul className="space-y-0.5">
                 {result.facialExpressions.map((exp, i) => (
                   <li key={i} className="text-xs text-foreground">{exp}</li>
@@ -134,7 +134,7 @@ export function TranslationResultCard({
           className="gap-2"
         >
           <RotateCcw className="h-4 w-4" />
-          Translate Another
+          Traducir Otro
         </Button>
       </div>
     </motion.div>
