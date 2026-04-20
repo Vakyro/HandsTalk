@@ -46,7 +46,7 @@ HandsTalk is a modern, AI-powered web platform for sign language translation and
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/handstalk.git
+git clone https://github.com/Vakyro/handstalk.git
 cd handstalk
 
 # Install dependencies
